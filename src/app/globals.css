@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #1e1e1e 0%, #313244 25%, #1e1e1e 50%, #313244 75%, #1e1e1e 100%);
+    color: #cdd6f4;
+  }
+}
+
+/* Original Catppuccin Mocha Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background-color: #45475a !important;
+  border-color: #6c7086 !important;
+  color: #cdd6f4 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #89b4fa !important;
+  box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.2) !important;
+  outline: none !important;
+  background-color: #45475a !important;
+  color: #cdd6f4 !important;
+}
+
+input::placeholder {
+  color: #a6adc8 !important;
+  opacity: 0.8 !important;
+}
+
+/* Autofill styling fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #45475a inset !important;
+  -webkit-text-fill-color: #cdd6f4 !important;
+  border: 1px solid #6c7086 !important;
+}
+
+/* Catppuccin Mocha Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #313244;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #585b70;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6c7086;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
