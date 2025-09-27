@@ -78,3 +78,28 @@ A comprehensive **CAT Mock Test Platform** that provides realistic exam simulati
 ### Installation
 
 1. **Clone the repository**
+
+git clone https://github.com/yourusername/cat-mock-test.git
+cd cat-mock-test
+
+text
+
+2. **Install dependencies**
+
+npm install
+
+text
+
+3. **Start development server**
+
+npm run dev
+
+text
+
+4. **Open browser**
+Navigate to `http://localhost:3000`
+
+### Build for Production
+
+npm run build
+npm start
