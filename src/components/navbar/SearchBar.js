@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Search, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-export default function SearchBar() {
+export default function SearchBar({ isMobile = false }) {
   const { searchQuery, setSearchQuery } = useQuizStore()
   const [localQuery, setLocalQuery] = useState(searchQuery)
 
@@ -21,16 +21,16 @@ export default function SearchBar() {
   }
 
   return (
-    <div className="relative w-64">
+    <div className={`relative ${isMobile ? 'w-full' : 'w-64'}`}>
       <form onSubmit={handleSearch}>
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4" style={{ color: '#a6adc8' }} />
           <Input
             type="text"
-            placeholder="Search mock tests..."
+            placeholder={isMobile ? "Search tests..." : "Search mock tests..."}
             value={localQuery}
             onChange={(e) => setLocalQuery(e.target.value)}
-            className="pl-10 pr-10 h-9 transition-all duration-200"
+            className={`pl-10 pr-10 transition-all duration-200 ${isMobile ? 'h-10' : 'h-9'}`}
             style={{
               backgroundColor: '#45475a',
               borderColor: '#6c7086',
