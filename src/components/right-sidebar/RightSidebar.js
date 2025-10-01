@@ -5,7 +5,7 @@ import CircularProgress from './CircularProgress'
 import StatCard from './StatCard'
 import { useQuizStore } from '@/lib/store'
 
-export default function RightSidebar() {
+export default function RightSidebar({ isMobile = false }) {
   const { 
     totalQuizzes, 
     correctAnswers, 
@@ -34,8 +34,43 @@ export default function RightSidebar() {
     }
   ]
 
+  if (isMobile) {
+    return (
+      <Card 
+        className="border"
+        style={{ 
+          backgroundColor: '#313244',
+          borderColor: '#585b70'
+        }}
+      >
+        <CardContent className="p-4">
+          <div className="grid grid-cols-3 gap-3">
+            <div className="text-center">
+              <div className="text-lg font-bold" style={{ color: '#f9e2af' }}>
+                {totalPoints}
+              </div>
+              <div className="text-xs" style={{ color: '#a6adc8' }}>XP</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg font-bold" style={{ color: '#a6e3a1' }}>
+                {currentStreak}
+              </div>
+              <div className="text-xs" style={{ color: '#a6adc8' }}>Streak</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg font-bold" style={{ color: '#89b4fa' }}>
+                {accuracy}%
+              </div>
+              <div className="text-xs" style={{ color: '#a6adc8' }}>Accuracy</div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <Card 
         className="border"
         style={{ 
